@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site: a single-page layout with smooth motion, dark theme, and sections for work, process, stack, and contact.
 
-Currently, two official plugins are available:
+## What’s on the page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Hero** — introduction and primary call-to-action  
+- **What I do** — services or focus areas  
+- **Projects** — highlighted work  
+- **How I work** — process and collaboration  
+- **Stack** — tools and technologies  
+- **About** — background and photo (`public/profile.jpg`)  
+- **CTA / Footer** — contact and links  
 
-## React Compiler
+Content and copy live in the React components under `src/components/`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/) 19 + [TypeScript](https://www.typescriptlang.org/)  
+- [Vite](https://vite.dev/) 8  
+- [Tailwind CSS](https://tailwindcss.com/) 4 (via `@tailwindcss/vite`)  
+- [Framer Motion](https://www.framer.com/motion/) for animation  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Node.js](https://nodejs.org/) (LTS recommended)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Scripts
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install    # install dependencies
+npm run dev    # local dev server (Vite)
+npm run build  # typecheck + production build → dist/
+npm run preview # serve the production build locally
+npm run lint   # ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project layout
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+  App.tsx           # page shell and section order
+  components/       # Nav, Hero, sections, Footer
+public/
+  profile.jpg       # headshot for About (replace as needed)
+```
+
+## Customization
+
+- Edit each section in `src/components/*.tsx` for your own text, links, and project entries.  
+- Swap `public/profile.jpg` for your photo; keep the path or update the image `src` in `About.tsx`.  
+- Adjust colors and typography via Tailwind classes and global styles in `src/App.css` (and Tailwind config if you add one).
+
+## License
+
+Private project (`private: true` in `package.json`). Change as you like if you open-source it.
