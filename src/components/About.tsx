@@ -14,7 +14,7 @@ export default function About() {
             <div className="flex items-center gap-5 mb-6">
               <img
                 src="/profile.jpg"
-                alt="Osamudimen Ojo"
+                alt="Osamudiamen Ojo"
                 className="w-16 h-16 rounded-full object-cover border-2 border-zinc-700"
               />
               <span className="text-xs font-medium tracking-widest uppercase text-indigo-400">
@@ -34,11 +34,11 @@ export default function About() {
             className="space-y-5 text-zinc-400 leading-relaxed"
           >
             <p>
-              I spent 4+ years building backend systems — APIs, data pipelines,
-              integrations — the kind of work where reliability and edge cases
-              matter more than demos. That foundation is what separates the
-              automation work I do from what most people mean when they say
-              "no-code."
+              I spent 4+ years building backend systems in Java and Python —
+              APIs, data pipelines, integrations — the kind of work where
+              reliability and edge cases matter more than demos. That foundation
+              is what separates the automation work I do from what most people
+              mean when they say "no-code."
             </p>
             <p>
               When AI tooling started becoming genuinely useful in production, I
@@ -60,6 +60,14 @@ export default function About() {
                 className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
               >
                 LinkedIn →
+              </a>
+              <a
+                href="https://github.com/ojov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+              >
+                GitHub →
               </a>
               <a
                 href="mailto:victorojo007@gmail.com"
