@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 
-export default function CTA() {
+interface Props {
+  onContact: () => void
+}
+
+export default function CTA({ onContact }: Props) {
   return (
     <section className="py-24 border-t border-zinc-800/50">
       <div className="max-w-5xl mx-auto px-6">
@@ -19,12 +23,12 @@ export default function CTA() {
             build it.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <a
-              href="mailto:victorojo007@gmail.com"
+            <button
+              onClick={onContact}
               className="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors text-sm"
             >
               Let's Build Something
-            </a>
+            </button>
             <a
               href="https://www.linkedin.com/in/ojov/"
               target="_blank"

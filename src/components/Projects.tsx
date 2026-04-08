@@ -33,6 +33,7 @@ const projects = [
     category: 'Marketing',
     title: 'Content Generation Pipeline',
     org: 'Fetemi Marketing Agency',
+    demo: 'https://youtu.be/pbF9PGgi5AU?si=0W0hsRnGbyRuxWcA',
     problem:
       'Content team was producing all content manually — researching, writing, adapting for each platform. A single piece took a full working day and quality varied by team member.',
     solution:
@@ -46,6 +47,7 @@ const projects = [
     category: 'Operations',
     title: 'Invoice Intelligence System',
     org: 'Internal / B2B',
+    demo: 'https://www.loom.com/share/570cb2ca9afc49b9ac2c1398a391520a',
     problem:
       'Finance teams manually reading through emails one by one to identify invoices, then re-typing the details into spreadsheets — time-consuming, error-prone, and unscalable.',
     solution:
@@ -138,15 +140,28 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-zinc-800 flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700"
-                  >
-                    {tool}
-                  </span>
-                ))}
+              <div className="mt-6 pt-6 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex flex-wrap gap-2">
+                  {project.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-md bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 transition-colors"
+                >
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Watch Demo
+                </a>
               </div>
             </motion.div>
           ))}

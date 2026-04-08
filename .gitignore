@@ -22,3 +22,5 @@ AGENTS.md
 *.njsproj
 *.sln
 *.sw?
+.vercel
+.env*.local

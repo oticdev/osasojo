@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 
-export default function Hero() {
+interface Props {
+  onContact: () => void
+}
+
+export default function Hero({ onContact }: Props) {
   return (
     <section className="min-h-screen flex items-center pt-14">
       <div className="max-w-5xl mx-auto px-6 py-24">
@@ -33,12 +37,12 @@ export default function Hero() {
             >
               View Projects
             </a>
-            <a
-              href="mailto:victorojo007@gmail.com"
+            <button
+              onClick={onContact}
               className="px-6 py-3 border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-zinc-100 rounded-lg font-medium transition-colors"
             >
               Get in Touch
-            </a>
+            </button>
           </div>
         </motion.div>
 
